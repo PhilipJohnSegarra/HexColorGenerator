@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HexColorGenerator.MainPage"
+             BackgroundColor="#FFFFFF"
+             Loaded="ContentPage_Loaded">
+    <VerticalStackLayout HorizontalOptions="Fill"
+                         VerticalOptions="Start">
+        <Grid>
+            <Image Source="labelbackground.png" 
+                   MaximumHeightRequest="80" 
+                   Aspect="AspectFill"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"></Image>
+            <Label HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontFamily="Canterbury.ttf"
+                   FontSize="35"
+                   TextColor="#FFE682">Witches Burn</Label>
+        </Grid>
+        <Image Source="burningwitch.png"
+               HorizontalOptions="Center"
+               MaximumHeightRequest="300"
+               x:Name="witchImage"></Image>
+        <!--Sliders Area-->
+        <Grid>
+            <Image Source="labelbackground.png" 
+                   MaximumHeightRequest="40" 
+                   Aspect="AspectFill"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"></Image>
+            <Label HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   FontFamily="Canterbury.ttf"
+                   FontSize="20"
+                   Text="  Red:"
+                   TextColor="#FFE682"
+                   x:Name="redLabel"/>
+        </Grid>
+        <Grid>
+            <Image Source="sliderbackground.png" 
+                   MaximumHeightRequest="50" 
+                   Aspect="AspectFill"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Center"></Image>
+            <Grid Padding="30,0">
+                <Slider MinimumTrackColor="Red"
+                        MaximumTrackColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        MinimumWidthRequest="300"
+                        ThumbImageSource="torch_30"
+                        Minimum="0"
+                        Maximum="255"
+                        x:Name="redSlider"
+                        ValueChanged="Slider_ValueChanged"></Slider>
+
+            </Grid>
+        </Grid>
+
+        <Grid>
+            <Image Source="labelbackground.png" 
+                   MaximumHeightRequest="40" 
+                   Aspect="AspectFill"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"></Image>
+            <Label HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   FontFamily="Canterbury.ttf"
+                   FontSize="20"
+                   Text="  Green:"
+                   TextColor="#FFE682"
+                   x:Name="greenLabel"/>
+        </Grid>
+        <Grid>
+            <Image Source="sliderbackground.png" 
+           MaximumHeightRequest="50" 
+           Aspect="AspectFill"
+           HorizontalOptions="Fill"
+           VerticalOptions="Center"></Image>
+            <Grid Padding="30,0">
+                <Slider MinimumTrackColor="Green"
+                        MaximumTrackColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        MinimumWidthRequest="300"
+                        ThumbImageSource="torch_30"
+                        Minimum="0"
+                        Maximum="255"
+                        x:Name="greenSlider"
+                        ValueChanged="Slider_ValueChanged"></Slider>
+            </Grid>
+        </Grid>
+
+        <Grid>
+            <Image Source="labelbackground.png" 
+                   MaximumHeightRequest="40" 
+                   Aspect="AspectFill"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"></Image>
+            <Label HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   FontFamily="Canterbury.ttf"
+                   FontSize="20"
+                   Text="  Blue:"
+                   TextColor="#FFE682"
+                   x:Name="blueLabel"/>
+        </Grid>
+        <Grid>
+            <Image Source="sliderbackground.png" 
+                   MaximumHeightRequest="50" 
+                   Aspect="AspectFill"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Center"></Image>
+            <Grid Padding="30,0">
+                <Slider MinimumTrackColor="Blue"
+                        MaximumTrackColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        MinimumWidthRequest="300"
+                        ThumbImageSource="torch_30"
+                        Minimum="0"
+                        Maximum="255"
+                        
+                        x:Name="blueSlider"
+                        ValueChanged="Slider_ValueChanged"></Slider>
+
+            </Grid>
+        </Grid>
+
+        <Grid
+            HorizontalOptions="Fill"
+            Margin="0,10,0,0">
+            <Grid 
+                  MaximumWidthRequest="100"
+                  HorizontalOptions="StartAndExpand">
+                <ImageButton Source="randombutton"
+                             MaximumHeightRequest="50"
+                             HorizontalOptions="Start"
+                             Aspect="AspectFit"></ImageButton>
+                <Label FontFamily="Canterbury"
+                       FontSize="25"
+                       HorizontalOptions="Center"
+                       TextColor="WhiteSmoke"
+                       VerticalOptions="Center">Random</Label>
+            </Grid>
+            <Grid MaximumWidthRequest="170"
+                  HorizontalOptions="End">
+                <ImageButton Source="hexcopy"
+                             MaximumHeightRequest="50"
+                             HorizontalOptions="Center"
+                             x:Name="copy"
+                             Clicked="copy_Clicked"></ImageButton>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label FontFamily="Canterbury"
+                           FontSize="20"
+                           HorizontalOptions="Center"
+                           TextColor="Black"
+                           VerticalOptions="Center"
+                           x:Name="hexLabel"></Label>
+                    <Image Source="copy"
+                           MaximumHeightRequest="20"
+                           HorizontalOptions="Center"></Image>
+                </HorizontalStackLayout>
+                
+            </Grid>
+        </Grid>
+
+    </VerticalStackLayout>
+    <!--<Grid>
+        --><!-- Fire Body --><!--
+        <Ellipse x:Name="fireBase"
+             WidthRequest="100"
+             HeightRequest="150"
+             VerticalOptions="Center"
+             HorizontalOptions="Center">
+            <Ellipse.Fill>
+                <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                    <GradientStop Color="Yellow" Offset="0.0" />
+                    <GradientStop Color="Orange" Offset="0.5" />
+                    <GradientStop Color="Red" Offset="1.0" />
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+
+        --><!-- Inner Fire Flicker --><!--
+        <Ellipse x:Name="fireFlicker"
+             WidthRequest="60"
+             HeightRequest="100"
+             VerticalOptions="Center"
+             HorizontalOptions="Center">
+            <Ellipse.Fill>
+                <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                    <GradientStop Color="Yellow" Offset="0.0" />
+                    <GradientStop Color="OrangeRed" Offset="1.0" />
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+
+    </Grid>-->
+
+</ContentPage>
